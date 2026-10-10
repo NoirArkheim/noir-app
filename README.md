@@ -23,7 +23,8 @@
     добавьте слайду `"pan": "right-left"` — камера пойдёт справа налево.
   - Новый выпуск: скопируйте файл, например в `issue-2.json`, и откройте
     `index.html?issue=issue-2.json`.
-- `art/splash/`, `art/panels/` — исходные PNG (копии из `noir_art`).
+- `art/splash/`, `art/panels/` — исходные PNG (копии из `noir_art`). В git и на сайт
+  не попадают (см. `.gitignore`), лежат только на этом компьютере.
 - `art/web/` — сжатые webp для телефона. Их и показывает страница.
 - `index.html`, `style.css`, `viewer.js` — сам просмотрщик.
 - `telegram.js` — связь с Telegram. Без Telegram страница работает так же.
