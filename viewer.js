@@ -7,6 +7,7 @@
   var FADE_MS = 500;          // уход в чёрное и выход из него — вместе около секунды
   var CAPTION_DELAY_MS = 250; // пауза между проявившейся картинкой и подписью
   var SWIPE_MIN_PX = 40;      // движение пальца короче этого считается тапом
+  var PAN_MS = 7000;          // панорама по горизонтальному кадру от края до края
 
   var stage = document.getElementById('stage');
   var image = document.getElementById('slide-image');
@@ -19,10 +20,53 @@
   var current = -1;
   var busy = false;
   var captionTimer = null;
+  var panAnimation = null;
 
   function wait(ms) {
     return new Promise(function (resolve) { setTimeout(resolve, ms); });
   }
+
+  function stopPan() {
+    if (panAnimation) panAnimation.cancel();
+    panAnimation = null;
+  }
+
+  // Горизонтальный кадр растягиваем на всю высоту экрана и ведём камеру
+  // от края до края, чтобы за время панорамы был виден весь кадр.
+  // Вертикальные картинки показываем целиком, как есть.
+  function startPan() {
+    stopPan();
+    var slide = slides[current];
+    var w = image.naturalWidth;
+    var h = image.naturalHeight;
+    var stageW = stage.clientWidth;
+    var stageH = stage.clientHeight;
+    var wide = w > h && w / h > stageW / stageH;
+
+    image.classList.toggle('pan', wide);
+    if (!wide) return;
+
+    var distance = stageH * w / h - stageW;
+    var from = 0;
+    var to = -distance;
+    if (slide.pan === 'right-left') {
+      from = -distance;
+      to = 0;
+    }
+    panAnimation = image.animate(
+      [{ transform: 'translateX(' + from + 'px)' }, { transform: 'translateX(' + to + 'px)' }],
+      { duration: PAN_MS, easing: 'ease-in-out', fill: 'forwards' }
+    );
+  }
+
+  // Экран поменял размер (повернули телефон, Telegram развернул окно) —
+  // пересчитываем панораму и продолжаем с того же места.
+  window.addEventListener('resize', function () {
+    if (current === -1 || busy) return;
+    var elapsed = panAnimation ? panAnimation.currentTime : null;
+    startPan();
+    if (panAnimation && elapsed !== null) panAnimation.currentTime = elapsed;
+  });
 
   function preload(index) {
     if (slides[index]) new Image().src = slides[index].image;
@@ -41,6 +85,7 @@
       await wait(FADE_MS);
     }
 
+    stopPan();
     var slide = slides[index];
     image.src = slide.image;
     image.alt = slide.title || '';
@@ -52,6 +97,7 @@
     captionText.textContent = slide.caption || '';
     caption.classList.toggle('empty', !slide.caption);
     current = index;
+    startPan();
 
     // Выходим из чёрного, потом показываем подпись.
     veil.classList.add('off');

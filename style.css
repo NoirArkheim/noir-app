@@ -1,7 +1,7 @@
 :root {
   --black: #000;
   --white: #f2f2f2;
-  --caption-bg: rgba(0, 0, 0, 0.72);
+  --caption-bg: rgba(0, 0, 0, 0.75);
   --fade: 500ms; /* половина перехода; должна совпадать с FADE_MS в viewer.js */
   --typewriter: "Courier New", Courier, "Liberation Mono", "PT Mono", monospace;
 }
@@ -46,6 +46,15 @@ body {
   pointer-events: none;
 }
 
+/* Горизонтальный кадр: во всю высоту экрана, двигается панорамой (viewer.js). */
+#slide-image.pan {
+  right: auto;
+  width: auto;
+  max-width: none;
+  object-fit: fill;
+  will-change: transform;
+}
+
 /* Подпись закадровым голосом. */
 #caption {
   position: absolute;
@@ -74,6 +83,7 @@ body {
 
 #caption-text {
   margin: 0;
+  text-shadow: 0 1px 2px #000; /* запас читаемости на светлых местах кадра */
   white-space: pre-line; /* перенос строки в issue.json (\n) — перенос в подписи */
 }
 
