@@ -2,6 +2,7 @@
   --black: #000;
   --white: #f2f2f2;
   --caption-bg: rgba(0, 0, 0, 0.75);
+  --panel-border: #e6e1d6;
   --fade: 500ms; /* половина перехода; должна совпадать с FADE_MS в viewer.js */
   --typewriter: "Courier New", Courier, "Liberation Mono", "PT Mono", monospace;
 }
@@ -46,13 +47,28 @@ body {
   pointer-events: none;
 }
 
-/* Горизонтальный кадр: во всю высоту экрана, двигается панорамой (viewer.js). */
-#slide-image.pan {
+/* Горизонтальный кадр: во всю высоту экрана; панораму и уменьшение
+   до кадра комикса делает viewer.js через transform. */
+#slide-image.wide {
   right: auto;
   width: auto;
   max-width: none;
   object-fit: fill;
+  transform-origin: 0 0;
   will-change: transform;
+}
+
+/* Тонкая светлая рамка кадра комикса. */
+#frame {
+  position: absolute;
+  box-shadow: 0 0 0 2px var(--panel-border);
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+
+#frame.shown {
+  opacity: 1;
 }
 
 /* Подпись закадровым голосом. */
@@ -79,6 +95,13 @@ body {
 
 #caption.empty {
   display: none;
+}
+
+/* Подпись под кадром комикса — на чёрном, без полосы. Высоту задаёт viewer.js. */
+#caption.below {
+  bottom: auto;
+  padding: 0 16px; /* как PANEL_MARGIN_PX в viewer.js */
+  background: none;
 }
 
 #caption-text {
