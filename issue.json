@@ -1,0 +1,27 @@
+{
+  "title": "Нуар-мафия — утренний выпуск",
+  "slides": [
+    { "image": "art/web/splash_night_v2.webp", "title": "Заставка · Город засыпает", "caption": "Подпись к заставке «Город засыпает»" },
+
+    { "image": "art/web/panel_citizen_job_search_v1.webp", "title": "День · Найти работу", "caption": "Подпись к кадру 1" },
+    { "image": "art/web/panel_citizen_factory_shift_v1.webp", "title": "День · Смена на заводе", "caption": "Подпись к кадру 2" },
+    { "image": "art/web/panel_citizen_lunch_rumor_v1.webp", "title": "День · Слух на обеде", "caption": "Подпись к кадру 3" },
+    { "image": "art/web/panel_citizen_wanted_man_v1.webp", "title": "Дорога на работу · Человек по ориентировке", "caption": "Подпись к кадру 4" },
+    { "image": "art/web/panel_citizen_phone_call_v1.webp", "title": "День · Сообщить в полицию", "caption": "Подпись к кадру 5" },
+    { "image": "art/web/panel_citizen_street_meeting_v1.webp", "title": "День · Встреча на улице", "caption": "Подпись к кадру 6" },
+    { "image": "art/web/panel_citizen_payday_v1.webp", "title": "День · Получка", "caption": "Подпись к кадру 7" },
+    { "image": "art/web/panel_citizen_new_lock_v1.webp", "title": "День · Укрепить жильё", "caption": "Подпись к кадру 8" },
+    { "image": "art/web/panel_citizen_courtyard_v1.webp", "title": "День · Посидеть во дворе", "caption": "Подпись к кадру 9" },
+    { "image": "art/web/panel_citizen_night_call_v1.webp", "title": "Ночь · Вызов на ночную смену", "caption": "Подпись к кадру 10" },
+    { "image": "art/web/panel_citizen_night_shift_port_v1.webp", "title": "Ночь · Ночная смена в порту", "caption": "Подпись к кадру 11" },
+    { "image": "art/web/panel_citizen_beer_run_v1.webp", "title": "Ночь · Сходить за пивом", "caption": "Подпись к кадру 12" },
+    { "image": "art/web/panel_citizen_pharmacy_v1.webp", "title": "Ночь · Помочь соседке до аптеки", "caption": "Подпись к кадру 13" },
+    { "image": "art/web/panel_citizen_insomnia_v1.webp", "title": "Ночь · Бессонница", "caption": "Подпись к кадру 14" },
+    { "image": "art/web/panel_citizen_stay_home_v1.webp", "title": "Ночь · Сидеть дома", "caption": "Подпись к кадру 15" },
+    { "image": "art/web/panel_citizen_break_in_v1.webp", "title": "Событие · Налёт на квартиру", "caption": "Подпись к кадру 16" },
+    { "image": "art/web/panel_citizen_ambush_v1.webp", "title": "Событие · Засада по дороге", "caption": "Подпись к кадру 17" },
+    { "image": "art/web/panel_citizen_testimony_v1.webp", "title": "Событие · Показания в участке", "caption": "Подпись к кадру 18" },
+
+    { "image": "art/web/splash_morning_v2.webp", "title": "Заставка · Утро", "caption": "Подпись к заставке «Утро»" }
+  ]
+}

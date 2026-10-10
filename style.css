@@ -1,0 +1,106 @@
+:root {
+  --black: #000;
+  --white: #f2f2f2;
+  --caption-bg: rgba(0, 0, 0, 0.72);
+  --fade: 500ms; /* половина перехода; должна совпадать с FADE_MS в viewer.js */
+  --typewriter: "Courier New", Courier, "Liberation Mono", "PT Mono", monospace;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--black);
+  color: var(--white);
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+/* Сцена — вертикальный «экран телефона». На телефоне занимает весь экран,
+   на компьютере — полосу по центру с пропорциями 9:16. */
+#stage {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100vw, 56.25vh);
+  width: min(100vw, 56.25dvh);
+  overflow: hidden;
+  background: var(--black);
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Картинка целиком, без обрезки: горизонтальные кадры встают по ширине на чёрном. */
+#slide-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Подпись закадровым голосом. */
+#caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 20px calc(20px + env(safe-area-inset-bottom));
+  background: var(--caption-bg);
+  font-family: var(--typewriter);
+  font-size: clamp(15px, 4.2vw, 19px);
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  pointer-events: none;
+}
+
+#caption.shown {
+  opacity: 1;
+  transform: none;
+}
+
+#caption.empty {
+  display: none;
+}
+
+#caption-text {
+  margin: 0;
+  white-space: pre-line; /* перенос строки в issue.json (\n) — перенос в подписи */
+}
+
+/* Чёрная шторка для перехода между слайдами. Лежит поверх подписи. */
+#veil {
+  position: absolute;
+  inset: 0;
+  background: var(--black);
+  opacity: 1;
+  transition: opacity var(--fade) ease;
+  pointer-events: none;
+}
+
+#veil.off {
+  opacity: 0;
+}
+
+#message,
+#message-noscript {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  font-family: var(--typewriter);
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
