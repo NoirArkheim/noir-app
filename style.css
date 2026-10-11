@@ -1,10 +1,21 @@
+/* Свой шрифт для подписей: кириллица, латиница и цифры в одном начертании.
+   Без него телефон подставляет системный шрифт, и цифры выглядят иначе, чем буквы.
+   GNU FreeMono (лицензия GPL с исключением для шрифтов), урезан до нужных букв. */
+@font-face {
+  font-family: "Noir Typewriter";
+  src: url("fonts/freemono-noir.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --black: #000;
   --white: #f2f2f2;
   --caption-bg: rgba(0, 0, 0, 0.75);
   --panel-border: #e6e1d6;
   --fade: 500ms; /* половина перехода; должна совпадать с FADE_MS в viewer.js */
-  --typewriter: "Courier New", Courier, "Liberation Mono", "PT Mono", monospace;
+  --typewriter: "Noir Typewriter", "Courier New", Courier, monospace;
 }
 
 html,

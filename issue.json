@@ -1,27 +1,27 @@
 {
   "title": "Нуар-мафия — утренний выпуск",
   "slides": [
-    { "image": "art/web/splash_night_v2.webp", "title": "Заставка · Город засыпает", "caption": "Подпись к заставке «Город засыпает»" },
+    {"image": "art/web/splash_night_v2.webp", "title": "Заставка · Город засыпает", "caption": "Нью-Аркхейм. 23:00.\nГород засыпает. Не весь."},
 
-    { "image": "art/web/panel_citizen_job_search_v1.webp", "title": "День · Найти работу", "caption": "Подпись к кадру 1" },
-    { "image": "art/web/panel_citizen_factory_shift_v1.webp", "title": "День · Смена на заводе", "caption": "Подпись к кадру 2" },
-    { "image": "art/web/panel_citizen_lunch_rumor_v1.webp", "title": "День · Слух на обеде", "caption": "Подпись к кадру 3" },
-    { "image": "art/web/panel_citizen_wanted_man_v1.webp", "title": "Дорога на работу · Человек по ориентировке", "caption": "Подпись к кадру 4" },
-    { "image": "art/web/panel_citizen_phone_call_v1.webp", "title": "День · Сообщить в полицию", "caption": "Подпись к кадру 5" },
-    { "image": "art/web/panel_citizen_street_meeting_v1.webp", "title": "День · Встреча на улице", "caption": "Подпись к кадру 6" },
-    { "image": "art/web/panel_citizen_payday_v1.webp", "title": "День · Получка", "caption": "Подпись к кадру 7" },
-    { "image": "art/web/panel_citizen_new_lock_v1.webp", "title": "День · Укрепить жильё", "caption": "Подпись к кадру 8" },
-    { "image": "art/web/panel_citizen_courtyard_v1.webp", "title": "День · Посидеть во дворе", "caption": "Подпись к кадру 9" },
-    { "image": "art/web/panel_citizen_night_call_v1.webp", "title": "Ночь · Вызов на ночную смену", "caption": "Подпись к кадру 10" },
-    { "image": "art/web/panel_citizen_night_shift_port_v1.webp", "title": "Ночь · Ночная смена в порту", "caption": "Подпись к кадру 11" },
-    { "image": "art/web/panel_citizen_beer_run_v1.webp", "title": "Ночь · Сходить за пивом", "caption": "Подпись к кадру 12" },
-    { "image": "art/web/panel_citizen_pharmacy_v1.webp", "title": "Ночь · Помочь соседке до аптеки", "caption": "Подпись к кадру 13" },
-    { "image": "art/web/panel_citizen_insomnia_v1.webp", "title": "Ночь · Бессонница", "caption": "Подпись к кадру 14" },
-    { "image": "art/web/panel_citizen_stay_home_v1.webp", "title": "Ночь · Сидеть дома", "caption": "Подпись к кадру 15" },
-    { "image": "art/web/panel_citizen_break_in_v1.webp", "title": "Событие · Налёт на квартиру", "caption": "Подпись к кадру 16" },
-    { "image": "art/web/panel_citizen_ambush_v1.webp", "title": "Событие · Засада по дороге", "caption": "Подпись к кадру 17" },
-    { "image": "art/web/panel_citizen_testimony_v1.webp", "title": "Событие · Показания в участке", "caption": "Подпись к кадру 18" },
+    {"image": "art/web/panel_citizen_job_search_v1.webp", "title": "День · Найти работу", "caption": "Ворота завода, списки на доске мокнут под дождём.\nТвоя фамилия — где-то в самом низу."},
+    {"image": "art/web/panel_citizen_factory_shift_v1.webp", "title": "День · Смена на заводе", "caption": "8 часов у станка: стружка, грохот, гудок.\nЗдесь не думают. Здесь точат."},
+    {"image": "art/web/panel_citizen_lunch_rumor_v1.webp", "title": "День · Слух на обеде", "caption": "Обед на пирсе. Напарник наклоняется ближе:\n«Ночью у 6-го причала опять грузили без накладных»."},
+    {"image": "art/web/panel_citizen_wanted_man_v1.webp", "title": "Дорога на работу · Человек по ориентировке", "caption": "Лицо с листовки. Лицо у газетного лотка.\nОдно и то же. Или показалось?"},
+    {"image": "art/web/panel_citizen_phone_call_v1.webp", "title": "День · Сообщить в полицию", "caption": "Будка на углу, монета в щель.\nСказать — или повесить трубку?"},
+    {"image": "art/web/panel_citizen_street_meeting_v1.webp", "title": "День · Встреча на улице", "caption": "Незнакомец в шляпе знает твоё имя.\nИ спрашивает, где ты работаешь."},
+    {"image": "art/web/panel_citizen_payday_v1.webp", "title": "День · Получка", "caption": "Пятница. Жёлтый конверт через решётку кассы.\nНа неделю хватит. Если не тратить."},
+    {"image": "art/web/panel_citizen_new_lock_v1.webp", "title": "День · Укрепить жильё", "caption": "Новая цепочка на дверь: 3 шурупа и полчаса.\nСпать будешь спокойнее. Наверное."},
+    {"image": "art/web/panel_citizen_courtyard_v1.webp", "title": "День · Посидеть во дворе", "caption": "Домино во дворе. Старики всё видят,\nа соседки всё пересказывают."},
+    {"image": "art/web/panel_citizen_night_call_v1.webp", "title": "Ночь · Вызов на ночную смену", "caption": "2:00 ночи. Звонит мастер:\nв порту не хватает рук."},
+    {"image": "art/web/panel_citizen_night_shift_port_v1.webp", "title": "Ночь · Ночная смена в порту", "caption": "Ночная смена. Ящики без маркировки.\nЛишних вопросов здесь не задают."},
+    {"image": "art/web/panel_citizen_beer_run_v1.webp", "title": "Ночь · Сходить за пивом", "caption": "Магазин закрывается в 23:00. Ты успел.\nДорога назад почему-то длиннее."},
+    {"image": "art/web/panel_citizen_pharmacy_v1.webp", "title": "Ночь · Помочь соседке до аптеки", "caption": "Соседке из 4-й квартиры 82 года.\nОдна до аптеки она не дойдёт. Ночью — тем более."},
+    {"image": "art/web/panel_citizen_insomnia_v1.webp", "title": "Ночь · Бессонница", "caption": "Не спится. Спичка, сигарета, пожарная лестница.\nВнизу кто-то слишком долго стоит у подъезда."},
+    {"image": "art/web/panel_citizen_stay_home_v1.webp", "title": "Ночь · Сидеть дома", "caption": "Дверь на цепочке, радио вполголоса.\nДома безопаснее. Но не совсем."},
+    {"image": "art/web/panel_citizen_break_in_v1.webp", "title": "Событие · Налёт на квартиру", "caption": "3:12. Скрип двери, луч фонаря в коридоре.\nГаечный ключ под подушкой — вся твоя защита."},
+    {"image": "art/web/panel_citizen_ambush_v1.webp", "title": "Событие · Засада по дороге", "caption": "Короткая дорога через переулок.\nТы не заметил того, кто стоял в дверях."},
+    {"image": "art/web/panel_citizen_testimony_v1.webp", "title": "Событие · Показания в участке", "caption": "Участок, 7:30 утра. Детектив печатает двумя пальцами:\n«Ещё раз: во сколько вы его видели?»"},
 
-    { "image": "art/web/splash_morning_v2.webp", "title": "Заставка · Утро", "caption": "Подпись к заставке «Утро»" }
+    {"image": "art/web/splash_morning_v2.webp", "title": "Заставка · Утро", "caption": "Утро. Кофе и свежая газета.\nПосмотрим, кто сегодня не проснулся."}
   ]
 }
