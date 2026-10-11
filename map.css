@@ -151,7 +151,11 @@ button {
 .label {
   position: absolute;
   transform: translate(-50%, -50%);
-  max-width: 18%;
+  /* Ширина — по тексту, а не по месту до края карты: иначе метки у правого края
+     сжимаются (центрирование через transform браузер делает уже после расчёта ширины). */
+  width: max-content;
+  max-width: 16.5%; /* не шире квартала (самый узкий — 16,8% ширины карты) */
+  box-sizing: border-box;
   padding: 2px 4px;
   font-size: var(--label-size, 9px);
   line-height: 1.15;
@@ -160,6 +164,11 @@ button {
   background: rgba(0, 0, 0, 0.72);
   border-radius: 2px;
   white-space: normal;
+  /* Слово длиннее квартала («Автомастерская») переносится по слогам, а не вылезает
+     за край. Где браузер не умеет переносить по-русски — рвётся внутри метки. */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .label.code {
