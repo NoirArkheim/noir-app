@@ -1,0 +1,234 @@
+/* Карта Нью-Аркхейма. Шрифт и цвета — как у просмотрщика выпуска. */
+@font-face {
+  font-family: "Noir Typewriter";
+  src: url("fonts/freemono-noir.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --black: #000;
+  --white: #f2f2f2;
+  --grey: #8a8a8a;
+  --line: #3a3a3a;
+  --typewriter: "Noir Typewriter", "Courier New", Courier, monospace;
+  --tint-opacity: 0.32; /* насколько ярко подсвечены районы: 0 — нет, 1 — сплошной цвет */
+  --bar-h: 48px;
+  --controls-h: 56px;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--typewriter);
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+/* Верхняя полоса: назад к выпуску, название, приближение. */
+#bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--bar-h);
+  padding-top: env(safe-area-inset-top);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background: var(--black);
+  border-bottom: 1px solid var(--line);
+  z-index: 3;
+}
+
+#bar h1 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+#to-issue {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 15px;
+  min-width: 90px;
+}
+
+#zoom {
+  min-width: 44px;
+  padding: 4px 10px;
+  font-size: 18px;
+}
+
+/* Окно карты: прокручивается, когда карта приближена. */
+#viewport {
+  position: fixed;
+  top: calc(var(--bar-h) + env(safe-area-inset-top));
+  bottom: calc(var(--controls-h) + env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Сама карта. Ширину задаёт map.js: целиком на экране или вдвое крупнее. */
+#map {
+  position: relative;
+  margin: 0 auto;
+}
+
+#map-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+#tint,
+#labels {
+  position: absolute;
+  inset: 0;
+}
+
+/* Квартал: прозрачная зона для нажатия, при включённой подсветке — цвет района. */
+.cell {
+  position: absolute;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.cell .fill {
+  position: absolute;
+  inset: 0;
+  opacity: var(--tint-opacity);
+  transition: opacity 300ms ease;
+  border-radius: 3px;
+}
+
+#map.no-tint .cell .fill {
+  opacity: 0;
+}
+
+.cell.selected {
+  outline: 2px solid var(--white);
+  outline-offset: -2px;
+}
+
+/* Метки. Размер текста растёт вместе с картой (map.js задаёт --label-size). */
+#labels {
+  pointer-events: none;
+}
+
+#map.no-labels #labels {
+  display: none;
+}
+
+.label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  max-width: 18%;
+  padding: 2px 4px;
+  font-size: var(--label-size, 9px);
+  line-height: 1.15;
+  text-align: center;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.72);
+  border-radius: 2px;
+  white-space: normal;
+}
+
+.label.code {
+  transform: none;
+  max-width: none;
+  padding: 1px 3px;
+  color: var(--grey);
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.label.venue {
+  border: 1px solid var(--white);
+}
+
+/* Нижняя полоса: выключатели. */
+#controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--controls-h);
+  padding-bottom: env(safe-area-inset-bottom);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--black);
+  border-top: 1px solid var(--line);
+  z-index: 3;
+}
+
+#controls button {
+  color: var(--grey);
+}
+
+#controls button.on {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* Карточка квартала по нажатию. */
+#sheet {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(var(--controls-h) + env(safe-area-inset-bottom) + 12px);
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.92);
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  z-index: 4;
+}
+
+#sheet p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+#sheet-title {
+  margin-bottom: 4px !important;
+  letter-spacing: 0.05em;
+}
+
+#message {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+}

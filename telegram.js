@@ -9,6 +9,13 @@
     var tg = window.Telegram && window.Telegram.WebApp;
     if (!tg || tg.platform === 'unknown') return; // открыто не в Telegram
 
+    // Ссылка t.me/NewArkheimBot?startapp=map открывает сразу карту.
+    var start = tg.initDataUnsafe && tg.initDataUnsafe.start_param;
+    if (start === 'map' && !/map\.html$/.test(location.pathname)) {
+      location.replace('map.html' + location.hash);
+      return;
+    }
+
     try {
       tg.ready();
       tg.expand();

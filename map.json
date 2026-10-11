@@ -1,0 +1,78 @@
+{
+  "title": "Нью-Аркхейм",
+  "image": "art/web/map_new_arkheim_v1.webp",
+  "imageWidth": 1024,
+  "imageHeight": 1536,
+
+  "columns": [[22, 192], [226, 400], [420, 606], [630, 803], [840, 1012]],
+  "rows": [[26, 210], [242, 408], [433, 610], [643, 841], [868, 1075], [1103, 1340]],
+
+  "districts": {
+    "sleep":    { "name": "Спальные кварталы", "color": "#5ac86e" },
+    "work":     { "name": "Рабочий квартал",   "color": "#c8a06e" },
+    "industry": { "name": "Промзона",          "color": "#c8a06e" },
+    "center":   { "name": "Деловой центр",     "color": "#8cc8f0" },
+    "ghetto":   { "name": "Гетто",             "color": "" },
+    "port":     { "name": "Порт и склады",     "color": "" },
+    "suburb":   { "name": "Дорогой пригород",  "color": "" },
+    "elite":    { "name": "Элитный район",     "color": "" },
+    "park":     { "name": "Городской парк",    "color": "" }
+  },
+
+  "cells": {
+    "A1": { "district": "suburb", "place": "Ипподром" },
+    "B1": { "district": "suburb", "place": "Гольф-клуб" },
+    "C1": { "district": "elite",  "place": "Парк с шахматами" },
+    "D1": { "district": "elite",  "place": "Джаз-клуб и ресторан" },
+    "E1": { "district": "sleep",  "place": "Газетный киоск" },
+
+    "A2": { "district": "sleep" },
+    "B2": { "district": "park" },
+    "C2": { "district": "park" },
+    "D2": { "district": "sleep" },
+    "E2": { "district": "sleep" },
+
+    "A3": { "district": "sleep",  "place": "Аптека" },
+    "B3": { "district": "sleep" },
+    "C3": { "district": "center", "place": "Мэрия и редакция" },
+    "D3": { "district": "center" },
+    "E3": { "district": "sleep" },
+
+    "A4": { "district": "sleep",  "place": "Парикмахерская" },
+    "B4": { "district": "center", "place": "Кино" },
+    "C4": { "district": "center", "place": "Полицейский участок" },
+    "D4": { "district": "work" },
+    "E4": { "district": "work",   "place": "Спортзал" },
+
+    "A5": { "district": "port" },
+    "B5": { "district": "ghetto" },
+    "C5": { "district": "ghetto" },
+    "D5": { "district": "work" },
+    "E5": { "district": "industry" },
+
+    "A6": { "district": "port",   "place": "Пирс" },
+    "B6": { "district": "port",   "place": "Доки и склады" },
+    "C6": { "district": "ghetto" },
+    "D6": { "district": "industry" },
+    "E6": { "district": "industry", "place": "Завод" }
+  },
+
+  "venueTypes": {
+    "bar":     "Бар",
+    "cafe":    "Кафе",
+    "casino":  "Казино",
+    "garage":  "Автомастерская",
+    "laundry": "Прачечная"
+  },
+
+  "venues": [
+    { "cell": "A5", "type": "bar",     "name": "Бар «Якорь»" },
+    { "cell": "D4", "type": "bar",     "name": "Бар «Синяя луна»" },
+    { "cell": "E3", "type": "bar",     "name": "Бар «Последний трамвай»" },
+    { "cell": "B3", "type": "cafe",    "name": "Кафе «Ранняя пташка»" },
+    { "cell": "D3", "type": "cafe",    "name": "Кафе «Кофе и пончики»" },
+    { "cell": "B5", "type": "casino",  "name": "Подпольное казино «Счастливая семёрка»" },
+    { "cell": "E5", "type": "garage",  "name": "Автомастерская «Гараж Тони»" },
+    { "cell": "D5", "type": "laundry", "name": "Прачечная «Белый лебедь»" }
+  ]
+}

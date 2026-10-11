@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000">
+  <title>Нуар-мафия — карта города</title>
+  <link rel="stylesheet" href="map.css">
+</head>
+<body>
+  <header id="bar">
+    <a id="to-issue" href="index.html">‹ Выпуск</a>
+    <h1 id="title">Нью-Аркхейм</h1>
+    <button id="zoom" type="button" aria-label="Приблизить">＋</button>
+  </header>
+
+  <main id="viewport">
+    <div id="map">
+      <img id="map-image" alt="Карта Нью-Аркхейма" draggable="false">
+      <div id="tint"></div>
+      <div id="labels"></div>
+    </div>
+  </main>
+
+  <footer id="controls">
+    <button id="toggle-tint" type="button" class="on" aria-pressed="true">Районы</button>
+    <button id="toggle-labels" type="button" class="on" aria-pressed="true">Метки</button>
+  </footer>
+
+  <section id="sheet" hidden>
+    <p id="sheet-title"></p>
+    <p id="sheet-text"></p>
+  </section>
+
+  <p id="message" hidden></p>
+
+  <script src="telegram.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
